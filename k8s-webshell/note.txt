@@ -1,0 +1,7 @@
+docker build -t huary/k8s-container-terminal:1.0 .
+
+
+docker run -d --name k8s-container-terminal -p 8070:8080 huary/k8s-container-terminal:1.0
+
+
+docker run -d --name k8s-container-terminal -p 8070:8080 --add-host=k8s-api.platform-technology.com:10.110.85.213 huary/k8s-container-terminal:1.0

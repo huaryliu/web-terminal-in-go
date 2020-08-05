@@ -9,4 +9,5 @@ func init() {
 	beego.Router("/", &controllers.HomeController{})
 	beego.Router("/terminal", &controllers.TerminalController{}, "get:Get")
 	beego.Handler("/terminal/ws", &controllers.TerminalSockjs{}, true)
+	beego.Router("/upload/k8sconfig", &controllers.FileOptUploadController{})
 }

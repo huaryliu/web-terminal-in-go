@@ -68,6 +68,7 @@ func buildConfigFromContextFlags(context, kubeconfigPath string) (*rest.Config, 
 // 处理输入输出与sockjs 交互
 func Handler(t *TerminalSockjs, cmd string) error {
 	config, err := buildConfigFromContextFlags(t.context, beego.AppConfig.String("kubeconfig"))
+	beego.Debug(fmt.Sprintf("k8s-config: %s", t.context))
 	if err != nil {
 		return err
 	}
